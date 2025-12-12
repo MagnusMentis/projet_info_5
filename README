@@ -31,24 +31,31 @@ int capacity_ // empty list cases (nb of free spaces = n-1 empty cases because o
 
 Implement those functions that fall to you:
 
-    Student A:
+    Student A (Nathanaël):
         copy constructor
         c_str()
         size()
         clear()
         operator=(char)
         operator+(const string&, const char*)
-    Student B:
+    Student B (Israël):
         constructor from a c-string
         length()
         max_size()
         resize(size_t, char)
         operator=(const string&)
         operator+(const string&, char)
-    Student C:
+    Student C (Axel):
         destructor
         capacity()
         empty()
         reserve(size_t)
         operator=(const char*)
         operator+(const string&, const string&)
+        
+================================================================
+ALLOWED FUNCTIONS :
+================================================================
+#include <cstring>
+strlen //size of string
+strcpy //copy string

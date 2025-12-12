@@ -1,7 +1,11 @@
 class string {
 	public :
 		char* data();
+		int size();
+		int max_size();
+		int capacity();
 		string();
+		string(const char* text);
 	protected :
 		char* data_;
 		int size_;
