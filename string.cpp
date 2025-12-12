@@ -17,3 +17,4 @@ string::string() {
 		}
 	capacity_ = 0;
 }
+
