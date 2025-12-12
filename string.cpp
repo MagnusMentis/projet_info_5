@@ -1,6 +1,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <cstring> 
+
 #include "string.h"
 
 int string::max_size_ = 100;
@@ -9,12 +10,41 @@ char* string::data() {
 	return data_;
 }
 
+int string::length() {
+	return size_;
+}
+
+int string::size() {
+	return size_;
+}
+
+int string::max_size() {
+	return max_size_;
+}
+
+int string::capacity() {
+	return capacity_;
+}
+
 string::string() {
-	size_ = 12;
+	size_ = 0;
 	data_ = new char [size_ + 1];
-	strcpy(data_,"Hello world!");
+	memcpy(data_,"",size_);
 	capacity_ = 0;
 }
+<<<<<<< HEAD
+=======
+
+
+string::string(const char* text) {
+	size_ = strlen(text);
+	data_ = new char [size_ + 1];
+	memcpy(data_,text,size_);
+	capacity_ = 0;
+}
+
+//strlen
+>>>>>>> 7b2f592e7f307339ddf54a37fd1eb67517b89e98
 //strcpy
 //memset
 //memcpy
