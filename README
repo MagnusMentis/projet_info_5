@@ -1,3 +1,8 @@
 DATA MEMBERS : //all values in the class (not functions)
 
-char text_ //list of characters
+char* data_ //list of characters
+int size_ // size of list 
+int max_size_ // value decided of list's max size (100)
+int capacity_ // empty list cases (nb of free spaces = n-1 empty cases because of \0)
+
+
