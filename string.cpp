@@ -18,6 +18,10 @@ string::string() {
 	capacity_ = 0;
 }
 
-string::lenght str ("Test string");
-  std::cout << "The size of str is " << str.length() << " bytes.\n";
-  return 0;
+string::length() {
+	length_ = new int [size_];
+		for (int i = 0 ; i < size_ ; i++) {
+			length_[i] = size_;
+		}
+	return length_;
+}
