@@ -1,8 +1,12 @@
 class string {
 	public :
 		char* data();
-		string();
+		int size();
+		int max_size();
+		int capacity();
 		int length();
+		string();
+		string(const char* text);
 	protected :
 		char* data_;
 		int size_;
