@@ -1,0 +1,3 @@
+DATA MEMBERS : //all values in the class (not functions)
+
+char text_ //list of characters
