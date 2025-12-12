@@ -17,3 +17,7 @@ string::string() {
 		}
 	capacity_ = 0;
 }
+
+string::lenght str ("Test string");
+  std::cout << "The size of str is " << str.length() << " bytes.\n";
+  return 0;
