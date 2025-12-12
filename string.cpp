@@ -32,9 +32,6 @@ string::string() {
 	memcpy(data_,"",size_);
 	capacity_ = 0;
 }
-<<<<<<< HEAD
-=======
-
 
 string::string(const char* text) {
 	size_ = strlen(text);
@@ -44,7 +41,6 @@ string::string(const char* text) {
 }
 
 //strlen
->>>>>>> 7b2f592e7f307339ddf54a37fd1eb67517b89e98
 //strcpy
 //memset
 //memcpy
