@@ -1,12 +1,16 @@
 #include <cstdlib>
 #include <iostream>
-
+#include <cstring>
 #include "string.h"
 
 int string::max_size_ = 100;
 
 char* string::data() {
 	return data_;
+}
+
+int string::length() {
+	return size_;
 }
 
 string::string() {
@@ -18,10 +22,3 @@ string::string() {
 	capacity_ = 0;
 }
 
-string::length() {
-	length_ = new int [size_];
-		for (int i = 0 ; i < size_ ; i++) {
-			length_[i] = size_;
-		}
-	return length_;
-}

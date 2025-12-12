@@ -2,6 +2,7 @@ class string {
 	public :
 		char* data();
 		string();
+		int length();
 	protected :
 		char* data_;
 		int size_;
