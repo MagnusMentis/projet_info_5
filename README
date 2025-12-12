@@ -1,4 +1,26 @@
+================================================================
+EXECUTE CODE :
+================================================================
+
+g++ -Wall -o program main.cpp string.cpp
+
+================================================================
+USING GIT :
+================================================================
+
+git add <all modified files>
+
+git commit -m "<nom commit>"
+
+git pull //always pull before push and resolve conflicts
+
+git push
+
+git pull // should return "already updated" to prove push worked
+
+================================================================
 DATA MEMBERS : //all values in the class (not functions)
+================================================================
 
 char* data_ //list of characters
 int size_ // size of list 
