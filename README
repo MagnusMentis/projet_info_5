@@ -28,3 +28,27 @@ int max_size_ // value decided of list's max size (100)
 int capacity_ // empty list cases (nb of free spaces = n-1 empty cases because of \0)
 
 
+
+Implement those functions that fall to you:
+
+    Student A:
+        copy constructor
+        c_str()
+        size()
+        clear()
+        operator=(char)
+        operator+(const string&, const char*)
+    Student B:
+        constructor from a c-string
+        length()
+        max_size()
+        resize(size_t, char)
+        operator=(const string&)
+        operator+(const string&, char)
+    Student C:
+        destructor
+        capacity()
+        empty()
+        reserve(size_t)
+        operator=(const char*)
+        operator+(const string&, const string&)
