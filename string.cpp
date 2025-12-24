@@ -22,8 +22,19 @@ int string::max_size() {
 	return max_size_;
 }
 
+// Student C
+
+string::~string(){  //destructor
+} 
+
 int string::capacity() {
 	return capacity_;
+}
+
+bool string::empty() const noexcept{
+	if (size_==0){
+		return true;}
+	else { return false;}
 }
 
 string::string() {
@@ -40,6 +51,9 @@ string::string(const char* text) {
 	capacity_ = 0;
 }
 
+
+
+	
 //strlen
 //strcpy
 //memset

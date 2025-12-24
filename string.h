@@ -7,6 +7,9 @@ class string {
 		int length();
 		string();
 		string(const char* text);
+		~string (); //destructeur
+		bool empty() const noexcept;
+	
 	protected :
 		char* data_;
 		int size_;
