@@ -9,6 +9,7 @@ class string {
 		string(const char* text);
 		~string (); //destructeur
 		bool empty() const noexcept;
+		void reserve (int n);
 	
 	protected :
 		char* data_;

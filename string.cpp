@@ -37,6 +37,21 @@ bool string::empty() const noexcept{
 	else { return false;}
 }
 
+void string::reserve(int n){
+	if (n<=capacity_){
+		}
+	else {
+		char* copie= new char[n];
+		for (int i=0; i<size_; i++){
+			copie[i]=data_[i];
+		}
+		delete[] data_;//les [] permettent de liberer tous le tableau et non pas que le premier element
+		data_=copie;
+		capacity_=n;
+		}
+}
+	
+
 string::string() {
 	size_ = 0;
 	data_ = new char [size_ + 1];
