@@ -11,7 +11,7 @@ int main() {
 	std::cout << A.data() << std::endl;
 	std::cout << "La taille est de: " << A.size() << std::endl; //we use .size() a lot for testing but we test this function in student A test to respect the order
 
-	std::cout << "Test constructor from char" << std::endl;
+	std::cout << "\nTest constructor from char" << std::endl;
 	string B("Hello world!");
 	std::cout << B.data() << std::endl;
 	std::cout << "La taille est de: " << B.size() << std::endl;
@@ -22,18 +22,18 @@ int main() {
 //================================================================
 
 
-	std::cout << "Test copy constructor" << std::endl;
+	std::cout << "\n Test copy constructor" << std::endl;
 	string C(B);
 	std::cout << C.data() << std::endl;
 	std::cout << "La taille est de: " << C.size() << std::endl;
 	
-	std::cout << "Test c_str" << std::endl;
+	std::cout << "\n Test c_str" << std::endl;
 	std::cout << C.c_str() << std::endl;
 	
-	std::cout << "Test size" << std::endl;
+	std::cout << "\n Test size" << std::endl;
 	std::cout << "La taille est de: " << C.size() << std::endl;
 	
-	std::cout << "Test clear" << std::endl;
+	std::cout << "\n Test clear" << std::endl;
 	C.clear();
 	std::cout << C.data() << std::endl;
 	
@@ -41,25 +41,25 @@ int main() {
 //Student B
 //================================================================
 
-	std::cout << "Test length" << std::endl;
+	std::cout << "\n Test length" << std::endl;
 	string D("Bonjour!");
 	std::cout << D.data() << std::endl;
 	std::cout << "La taille est de: " << D.length() << std::endl;
 
-	std::cout << "Test max size" << std::endl;
+	std::cout << "\n Test max size" << std::endl;
 	std::cout << "La taille maximale est de: " << D.max_size() << std::endl;
 
-	std::cout << "Test resize" << std::endl;
+	std::cout << "\n Test resize" << std::endl;
 	D.resize(5);
 	std::cout << D.data() << std::endl;
 	std::cout << "La taille est de: " << D.size() << std::endl;
 
-		std::cout << "Test resize with specified charater" << std::endl;
+		std::cout << "\n Test resize with specified charater" << std::endl;
 	D.resize(15,'a');
 	std::cout << D.data() << std::endl;
 	std::cout << "La taille est de: " << D.size() << std::endl;
 
-	std::cout << "Test resize with specified charater out of bounds (150)" << std::endl;
+	std::cout << "\n Test resize with specified charater out of bounds (150)" << std::endl;
 	D.resize(150,'a');
 	std::cout << D.data() << std::endl;
 	std::cout << "La taille est de: " << D.size() << std::endl;
@@ -69,21 +69,22 @@ int main() {
 //================================================================
 
 
-	std::cout << "Test reserve" << std::endl;	
+	std::cout << "\n Test reserve" << std::endl;	
 	std::cout << "Change t'on la capacité par n?: " << "capacité avant: "<< B.capacity() << std::endl;
 	B.reserve(10); //It's a void type function we cannot print it directly
 	std::cout << "capacité après: " << B.capacity() << std::endl;
 	std::string str1, str2, str3;
-  	str1 = "Test égal (c-string): ";  
+  	str1 = "\n Test égal (c-string): ";  
   	str2 = "Test réussi (c-string):";   
   	std::cout << str1  << str2<< std::endl;
   	std::string str4, str5;
-  	str3 = "Test plus (c-string): ";  
+  	str3 = "\n Test plus (c-string): ";  
   	str4 = "Mais où trouve t'il ";
-  	str5 = "toute cette énergie ?";
+  	str5 = "toute cette énergie ?\n";
+  	std::cout << str3.data() << std::endl;
   	std::cout << str4.data() << std::endl;
   	std::cout << str5.data() << std::endl;
-  	std::cout << str3  << str4+str5<< std::endl;
+  	std::cout << str4+str5<< std::endl;
 
 
 	return EXIT_SUCCESS;
