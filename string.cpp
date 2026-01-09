@@ -111,19 +111,17 @@ string::string(const string& str) { //str is of class string so we can use the f
 	memcpy(data_,str.data_,capacity_); //using capacity to copy the null-character
 }
 
-string::~string(){  //destructor
+string::~string(){
+	delete[] data_;  //destructor
 } 
 
 
 string& string::operator=(const char* s){ // remplace le string existant par un autre element
 	delete[] data_; 
-	int taille=0;
-	while (s[taille]!='\0'){
-		taille = taille+1;}
-	size_ = taille;
-	capacity_ = taille+1; 
+	size_ = strlen(s);
+	capacity_ = size_+1; 
 	data_ = new char[capacity_];
-	for (int i=0; i<taille; i++){
+	for (int i=0; i<size_; i++){
 			data_[i] = s[i];}
 	return *this;
 }
