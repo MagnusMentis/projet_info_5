@@ -34,8 +34,11 @@ int main() {
 	std::cout << "Test length" << std::endl;
 	string D("Bonjour!");
 	std::cout << D.data() << std::endl;
-	std::cout << "La taille est de: " << C.length() << std::endl;
-	
+	std::cout << "La taille est de: " << D.length() << std::endl;
+
+	std::cout << "Test max size" << std::endl;
+	std::cout << "La taille maximale est de: " << D.max_size() << std::endl;
+
 //================================================================
 //Student C
 //================================================================
