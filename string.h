@@ -10,6 +10,7 @@ class string {
 		~string (); //destructeur
 		bool empty() const noexcept;
 		void reserve (int n);
+		string& operator= (const char* s);
 	
 	protected :
 		char* data_;
