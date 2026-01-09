@@ -1,22 +1,26 @@
 class string {
 	public :
 
+		
+		
 		char* data() const;
-		int size() const;
-		int max_size() const;
+		char* c_str() const ;
 		int capacity() const;
 		int length() const;
+		int max_size() const;
+		int size() const;
 		bool empty() const noexcept;
 		void reserve (int n);
-		char* c_str() const ;
+		void resize(int n);
+		void resize(int n, char c);
+		
 		string();
 		string(const char* text);
 		string(const string& str);
 		~string (); //destructeur
 		string& operator= (const char* s);
 		friend string operator+ (const string& A, const string& B);
-		void resize(int n);
-		void resize(int n, char c);
+		
 
 		
 	protected :
