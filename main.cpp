@@ -71,16 +71,16 @@ int main() {
 
 	std::cout << "Test reserve" << std::endl;	
 	std::cout << "Change t'on la capacité par n?: " << "capacité avant: "<< B.capacity() << std::endl;
-	B.reserve(10); //c'est une fonction de type void on ne peut donc pas la print
+	B.reserve(10); //It's a void type function we cannot print it directly
 	std::cout << "capacité après: " << B.capacity() << std::endl;
 	std::string str1, str2, str3;
-  	str1 = "Test égal: ";  
-  	str2 = "Test réussi ;)";   
+  	str1 = "Test égal (c-string): ";  
+  	str2 = "Test réussi (c-string):";   
   	std::cout << str1  << str2<< std::endl;
   	std::string str4, str5;
-  	str3 = "Test +: ";  
+  	str3 = "Test plus (c-string): ";  
   	str4 = "Mais où trouve t'il ";
-  	str5 = "toute cette énergie";
+  	str5 = "toute cette énergie ?";
   	std::cout << str4.data() << std::endl;
   	std::cout << str5.data() << std::endl;
   	std::cout << str3  << str4+str5<< std::endl;
