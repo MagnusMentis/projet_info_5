@@ -32,7 +32,11 @@ int main() {
 	
 	std::cout << "Test size" << std::endl;
 	std::cout << "La taille est de: " << C.size() << std::endl;
-
+	
+	std::cout << "Test clear" << std::endl;
+	C.clear();
+	std::cout << C.data() << std::endl;
+	
 //================================================================
 //Student B
 //================================================================
@@ -50,8 +54,13 @@ int main() {
 	std::cout << D.data() << std::endl;
 	std::cout << "La taille est de: " << D.size() << std::endl;
 
-	std::cout << "Test resize with specified charater" << std::endl;
-	D.resize(10,'a');
+		std::cout << "Test resize with specified charater" << std::endl;
+	D.resize(15,'a');
+	std::cout << D.data() << std::endl;
+	std::cout << "La taille est de: " << D.size() << std::endl;
+
+	std::cout << "Test resize with specified charater out of bounds (150)" << std::endl;
+	D.resize(150,'a');
 	std::cout << D.data() << std::endl;
 	std::cout << "La taille est de: " << D.size() << std::endl;
 
@@ -72,6 +81,8 @@ int main() {
   	str3 = "Test +: ";  
   	str4 = "Mais où trouve t'il ";
   	str5 = "toute cette énergie";
+  	std::cout << str4.data() << std::endl;
+  	std::cout << str5.data() << std::endl;
   	std::cout << str3  << str4+str5<< std::endl;
 
 

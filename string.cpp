@@ -37,6 +37,13 @@ bool string::empty() const noexcept{
 	else { return false;}
 }
 
+void string::clear() {
+	size_ = 0;
+	capacity_ = 1;
+	data_ = new char [capacity_];
+	memset(data_,0,capacity_);
+}
+
 void string::reserve(int n){ //si parametre n>capacity, on remplace la valeur de capacity par n
 	if (n<=capacity_){
 		}
@@ -65,6 +72,7 @@ void string::resize(int n) {
 }	
 
 void string::resize(int n, char c) {
+	if (n <= max_size_){
 	int s= size_;
 	size_ = n;
 		capacity_ = n + 1;
@@ -74,8 +82,13 @@ void string::resize(int n, char c) {
 				data_[i] = c; //remplir avec des c si la nouvelle taille est plus grande
 			}
 		}
-
+	}
+	else {
+		std::cout << "Dépassement de la taille maximale autorisée" << std::endl;
+	}
+	
 }
+
 
 string::string() {
 	size_ = 0; //character "\0" doesn't count
@@ -115,6 +128,7 @@ string& string::operator=(const char* s){ // remplace le string existant par un 
 	return *this;
 }
 
+
 string operator+ (const string& A, const string& B) { //concatène 2 strings 
 	int taille_A = A.size();
 	int taille_B = B.size();
@@ -131,10 +145,3 @@ string operator+ (const string& A, const string& B) { //concatène 2 strings
 	return resultat;
 }	
 	
-	
-
-	
-//strlen
-//strcpy
-//memset
-//memcpy

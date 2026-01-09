@@ -61,3 +61,5 @@ ALLOWED FUNCTIONS :
 #include <cstring>
 strlen //size of string
 strcpy //copy string
+memset //allocate memory space
+memcpy //copy memory space
