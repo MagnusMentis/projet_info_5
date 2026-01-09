@@ -23,6 +23,33 @@ int string::max_size() const {
 }
 
 
+void string::resize(int n) {
+	int s = size_;
+	size_ = n;
+		capacity_ = n + 1;
+		data_[capacity_] = '\0'; //ajout du caractere de fin
+		if (n > s) {
+			for (int i = s+1; i < n; i++) {
+				data_[i] = '\0'; //remplir avec des '\0' si la nouvelle taille est plus grande
+			}
+		}
+
+}	
+
+void string::resize(int n, char c) {
+	int s= size_;
+	size_ = n;
+		capacity_ = n + 1;
+		data_[capacity_] = '\0'; //ajout du caractere de fin
+		if (n > s) {
+			for (int i = s+1; i < n; i++) {
+				data_[i] = c; //remplir avec des c si la nouvelle taille est plus grande
+			}
+		}
+
+}
+
+
 string::~string(){  //destructor
 } 
 

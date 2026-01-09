@@ -45,6 +45,16 @@ int main() {
 	std::cout << "Test max size" << std::endl;
 	std::cout << "La taille maximale est de: " << D.max_size() << std::endl;
 
+	std::cout << "Test resize" << std::endl;
+	D.resize(5);
+	std::cout << D.data() << std::endl;
+	std::cout << "La taille est de: " << D.size() << std::endl;
+
+	std::cout << "Test resize with specified charater" << std::endl;
+	D.resize(10,'a');
+	std::cout << D.data() << std::endl;
+	std::cout << "La taille est de: " << D.size() << std::endl;
+
 //================================================================
 //Student C
 //================================================================
