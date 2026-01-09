@@ -4,7 +4,7 @@
 
 #include "string.h"
 
-int string::max_size_ = 100;
+int string::max_size_ = 100; //set max size to 100
 
 char* string::data() const {
 	return data_;
@@ -15,36 +15,36 @@ char* string::c_str() const {
 }
 
 int string::capacity() const {
-	return capacity_;
+	return capacity_;  //gives the capacity of the string
 }
 
 int string::length() const {
-	return size_;
+	return size_; // length of characters in the string
 }
 
 
 int string::max_size() const {
-	return max_size_; 
+	return max_size_; // returns the maximum size allowed for the string
 }
 
 int string::size() const {
-	return size_;
+	return size_; //size of the string
 }
 
 bool string::empty() const noexcept{
-	if (size_==0){
+	if (size_==0){ //if the size is 0, the string is empty
 		return true;}
 	else { return false;}
 }
 
 void string::clear() {
-	size_ = 0;
+	size_ = 0; // set size to 0
 	capacity_ = 1;
 	data_ = new char [capacity_];
 	memset(data_,0,capacity_);
 }
 
-void string::reserve(int n){ //si parametre n>capacity, on remplace la valeur de capacity par n
+void string::reserve(int n){ //compare capacity whith the string n, if the capacity is smaller we create a new array with the size n
 	if (n<=capacity_){
 		}
 	else {
@@ -58,33 +58,33 @@ void string::reserve(int n){ //si parametre n>capacity, on remplace la valeur de
 		}
 }
 
-void string::resize(int n) {
-	int s = size_;
+void string::resize(int n) { //change the size of the string to n
+	int s = size_; //saves the current size
 	size_ = n;
 		capacity_ = n + 1;
-		data_[capacity_] = '\0'; //ajout du caractere de fin
+		data_[capacity_] = '\0'; //join the null-character
 		if (n > s) {
 			for (int i = s+1; i < n; i++) {
-				data_[i] = '\0'; //remplir avec des '\0' si la nouvelle taille est plus grande
+				data_[i] = '\0'; //complete with null-characters if the new size is bigger
 			}
 		}
 
 }	
 
-void string::resize(int n, char c) {
-	if (n <= max_size_){
+void string::resize(int n, char c) { //change the size of the string to n and complete with character c
+	if (n <= max_size_){//check if n is smaller than max_size
 	int s= size_;
 	size_ = n;
 		capacity_ = n + 1;
-		data_[capacity_] = '\0'; //ajout du caractere de fin
+		data_[capacity_] = '\0'; //join the null-character
 		if (n > s) {
 			for (int i = s+1; i < n; i++) {
-				data_[i] = c; //remplir avec des c si la nouvelle taille est plus grande
+				data_[i] = c; //complete with character c if the new size is bigger
 			}
 		}
 	}
 	else {
-		std::cout << "Dépassement de la taille maximale autorisée" << std::endl;
+		std::cout << "Dépassement de la taille maximale autorisée" << std::endl; //error message if n is bigger than max_size
 	}
 	
 }

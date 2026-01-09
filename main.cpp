@@ -54,7 +54,7 @@ int main() {
 	std::cout << D.data() << std::endl;
 	std::cout << "La taille est de: " << D.size() << std::endl;
 
-		std::cout << "Test resize with specified charater" << std::endl;
+	std::cout << "Test resize with specified charater" << std::endl;
 	D.resize(15,'a');
 	std::cout << D.data() << std::endl;
 	std::cout << "La taille est de: " << D.size() << std::endl;
