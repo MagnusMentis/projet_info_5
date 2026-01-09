@@ -6,45 +6,39 @@
 
 int string::max_size_ = 100;
 
-char* string::data() const {
+char* string::data() {
 	return data_;
 }
 
-int string::length() const {
+int string::length() const{
 	return size_;
 }
 
-int string::size() const {
+int string::size() {
 	return size_;
 }
 
-int string::max_size() const {
-	return max_size_; 
+int string::max_size() {
+	return max_size_;
 }
 
-int string::capacity() const {
+int string::capacity() {
 	return capacity_;
 }
 
 string::string() {
-	size_ = 0; //character "\0" doesn't count
-	capacity_ = 1; //capacity_ >= size_ + 1
-	data_ = new char [capacity_]; //account for a null-character
-	memset(data_, 0, capacity_); //memset to create an empty space in memory
+	size_ = 0;
+	data_ = new char [size_ + 1];
+	memcpy(data_,"",size_);
+	capacity_ = 0;
 }
+
 
 string::string(const char* text) {
 	size_ = strlen(text);
-	capacity_ = size_ + 1; //strlen doesn't count the null-character
-	data_ = new char [capacity_];
-	memcpy(data_,text,capacity_); //memcpy copies capacity_ bytes where text points
-}
-
-string::string(const string& str) { //str is of class string so we can use the functions above
-	size_ = str.size();
-	capacity_ = str.capacity();
-	data_ = new char [capacity_];
-	memcpy(data_,str.data_,capacity_); //using capacity to copy the null-character
+	data_ = new char [size_ + 1];
+	memcpy(data_,text,size_);
+	capacity_ = 0;
 }
 
 //strlen

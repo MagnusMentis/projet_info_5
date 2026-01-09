@@ -38,5 +38,9 @@ int main() {
 
 	
 
+	string C("Bonjour!");
+	std::cout << C.data() << std::endl;
+	std::cout << "La taille est de: " << C.length() << std::endl;
+
 	return EXIT_SUCCESS;
 }
