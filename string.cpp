@@ -62,6 +62,13 @@ char* string::c_str() const {
 	return data_; //simply returns data which is already a const char* type with null-character
 }
 
+void string::clear() {
+	size_ = 0;
+	capacity_ = 1;
+	data_ = new char [capacity_];
+	memset(data_,0,capacity_);
+}
+
 bool string::empty() const noexcept{
 	if (size_==0){
 		return true;}

@@ -9,6 +9,7 @@ class string {
 		bool empty() const noexcept;
 		void reserve (int n);
 		char* c_str() const ;
+		void clear();
 		string();
 		string(const char* text);
 		string(const string& str);

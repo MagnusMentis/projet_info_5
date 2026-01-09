@@ -32,7 +32,11 @@ int main() {
 	
 	std::cout << "Test size" << std::endl;
 	std::cout << "La taille est de: " << C.size() << std::endl;
-
+	
+	std::cout << "Test clear" << std::endl;
+	C.clear();
+	std::cout << C.data() << std::endl;
+	
 //================================================================
 //Student B
 //================================================================
