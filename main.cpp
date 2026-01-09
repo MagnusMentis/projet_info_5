@@ -72,6 +72,11 @@ int main() {
   	str1 = "Test égal: ";  
   	str2 = "Test réussi ;)";   
   	std::cout << str1  << str2<< std::endl;
+  	std::string str4, str5;
+  	str3 = "Test +: ";  
+  	str4 = "Mais où trouve t'il ";
+  	str5 = "toute cette énergie";
+  	std::cout << str3  << str4+str5<< std::endl;
 
 
 	return EXIT_SUCCESS;

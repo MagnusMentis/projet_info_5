@@ -15,8 +15,10 @@ class string {
 		string(const string& str);
 		~string (); //destructeur
 		string& operator= (const char* s);
+		friend string operator+ (const string& A, const string& B);
 		void resize(int n);
 		void resize(int n, char c);
+
 		
 	protected :
 		char* data_;
@@ -24,3 +26,5 @@ class string {
 		static int max_size_;
 		int capacity_;
 };
+
+

@@ -102,7 +102,22 @@ string& string::operator=(const char* s){ // remplace le string existant par un 
 			data_[i]=s[i];}
 	return *this;
 }
-	
+
+string operator+ (const string& A, const string& B) {
+	int taille_A=A.size();
+	int taille_B=B.size();
+	char* fusion=new char[taille_A+taille_B+1];
+	string resultat;
+	delete[]resultat.data_;
+	resultat.data_=fusion;
+	resultat.size_=taille_A+taille_B;
+	resultat.capacity_=taille_A+taille_B+1; 
+	for (int i=0; i<taille_A; i++){
+		resultat.data_[i]=A.data_[i];}
+	for (int j=0; j<taille_B; j++){
+		resultat.data_[taille_A+j]=B.data_[j];}
+	return resultat;
+}	
 	
 	
 	
