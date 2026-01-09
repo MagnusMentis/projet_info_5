@@ -13,6 +13,8 @@ class string {
 		string(const string& str);
 		~string (); //destructeur
 		string& operator= (const char* s);
+		void resize(int n);
+		void resize(int n, char c);
 		
 	protected :
 		char* data_;
