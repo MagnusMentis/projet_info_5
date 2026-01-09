@@ -8,6 +8,7 @@ class string {
 		int length() const;
 		bool empty() const noexcept;
 		void reserve (int n);
+		char* c_str() const ;
 		string();
 		string(const char* text);
 		string(const string& str);

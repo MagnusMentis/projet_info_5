@@ -9,7 +9,7 @@ int main() {
 	std::cout << "Test default constructor" << std::endl;
 	string A;
 	std::cout << A.data() << std::endl;
-	std::cout << "La taille est de: " << A.size() << std::endl;
+	std::cout << "La taille est de: " << A.size() << std::endl; //we use .size() a lot for testing but we test this function in student A test to respect the order
 
 	std::cout << "Test constructor from char" << std::endl;
 	string B("Hello world!");
@@ -25,6 +25,12 @@ int main() {
 	std::cout << "Test copy constructor" << std::endl;
 	string C(B);
 	std::cout << C.data() << std::endl;
+	std::cout << "La taille est de: " << C.size() << std::endl;
+	
+	std::cout << "Test c_str" << std::endl;
+	std::cout << C.c_str() << std::endl;
+	
+	std::cout << "Test size" << std::endl;
 	std::cout << "La taille est de: " << C.size() << std::endl;
 
 //================================================================

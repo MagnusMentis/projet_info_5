@@ -30,6 +30,11 @@ int string::capacity() const {
 	return capacity_;
 }
 
+
+char* string::c_str() const {
+	return data_; //simply returns data which is already a const char* type with null-character
+}
+
 bool string::empty() const noexcept{
 	if (size_==0){
 		return true;}
@@ -49,6 +54,7 @@ void string::reserve(int n){ //si parametre n>capacity, on remplace la valeur de
 		capacity_=n;
 		}
 }
+
 
 string& string::operator=(const char* s){ // remplace le string existant par un autre element
 	delete[] data_; 
@@ -78,7 +84,7 @@ string::string(const char* text) {
 	size_ = strlen(text);
 	capacity_ = size_ + 1; //strlen doesn't count the null-character
 	data_ = new char [capacity_];
-	memcpy(data_,text,capacity_); //memcpy copies capacity_ bytes where text points
+	memcpy(data_,text+0,capacity_); //memcpy copies capacity_ bytes where text points
 }
 
 string::string(const string& str) { //str is of class string so we can use the functions above
