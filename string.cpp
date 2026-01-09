@@ -22,9 +22,50 @@ int string::max_size() const {
 	return max_size_; 
 }
 
+
+string::~string(){  //destructor
+} 
+
 int string::capacity() const {
 	return capacity_;
 }
+
+bool string::empty() const noexcept{
+	if (size_==0){
+		return true;}
+	else { return false;}
+}
+
+void string::reserve(int n){ //si parametre n>capacity, on remplace la valeur de capacity par n
+	if (n<=capacity_){
+		}
+	else {
+		char* copie= new char[n];
+		for (int i=0; i<size_; i++){
+			copie[i]=data_[i];
+		}
+		delete[] data_;
+		data_=copie;
+		capacity_=n;
+		}
+}
+
+string& string::operator=(const char* s){ // remplace le string existant par un autre element
+	delete[] data_; 
+	int taille=0;
+	while (s[taille]!='\0'){
+		taille=taille+1;}
+	size_=taille;
+	capacity_=taille+1; 
+	data_=new char[capacity_];
+	for (int i=0; i<taille; i++){
+			data_[i]=s[i];}
+	return *this;
+}
+	
+	
+	
+	
 
 string::string() {
 	size_ = 0; //character "\0" doesn't count
@@ -47,6 +88,9 @@ string::string(const string& str) { //str is of class string so we can use the f
 	memcpy(data_,str.data_,capacity_); //using capacity to copy the null-character
 }
 
+
+
+	
 //strlen
 //strcpy
 //memset
