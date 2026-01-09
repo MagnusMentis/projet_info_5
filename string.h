@@ -13,6 +13,7 @@ class string {
 		string(const string& str);
 		~string (); //destructeur
 		string& operator= (const char* s);
+		friend string operator+ (const string& A, const string& B);
 		
 	protected :
 		char* data_;
@@ -20,3 +21,5 @@ class string {
 		static int max_size_;
 		int capacity_;
 };
+
+
