@@ -1,17 +1,19 @@
 class string {
 	public :
-		char* data();
-		int size();
-		int max_size();
-		int capacity();
-		int length();
-		string();
-		string(const char* text);
-		~string (); //destructeur
+
+		char* data() const;
+		int size() const;
+		int max_size() const;
+		int capacity() const;
+		int length() const;
 		bool empty() const noexcept;
 		void reserve (int n);
+		string();
+		string(const char* text);
+		string(const string& str);
+		~string (); //destructeur
 		string& operator= (const char* s);
-	
+		
 	protected :
 		char* data_;
 		int size_;
