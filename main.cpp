@@ -14,6 +14,14 @@ int main() {
 	std::cout << B.data() << std::endl;
 
 	std::cout << "La taille est de: " << B.length() << std::endl;
+	
+
+//================================================================
+//Student A
+//================================================================
+
+
+
 
 	return EXIT_SUCCESS;
 }

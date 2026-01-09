@@ -27,18 +27,17 @@ int string::capacity() {
 }
 
 string::string() {
-	size_ = 0;
-	data_ = new char [size_ + 1];
-	memcpy(data_,"",size_);
-	capacity_ = 0;
+	size_ = 0; //character "\0" doesn't count
+	capacity_ = 1; //capacity_ >= size_
+	data_ = new char [capacity_]; //account for a null-character
+	memset(data_, 0, capacity_); //memset to create an empty space in memory
 }
-
 
 string::string(const char* text) {
 	size_ = strlen(text);
-	data_ = new char [size_ + 1];
-	memcpy(data_,text,size_);
-	capacity_ = 0;
+	capacity_ = size_ + 1; //strlen doesn't count the null-character
+	data_ = new char [capacity_];
+	memcpy(data_,text,capacity_); //memcpy copies capacity_ bytes where text points
 }
 
 //strlen
