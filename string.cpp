@@ -4,7 +4,7 @@
 
 #include "string.h"
 
-int string::max_size_ = 100;
+int string::max_size_ = 100; //set max size to 100
 
 char* string::data() const {
 	return data_;
@@ -15,36 +15,36 @@ char* string::c_str() const {
 }
 
 int string::capacity() const {
-	return capacity_;
+	return capacity_;  //gives the capacity of the string
 }
 
 int string::length() const {
-	return size_;
+	return size_; // length of characters in the string
 }
 
 
 int string::max_size() const {
-	return max_size_; 
+	return max_size_; // returns the maximum size allowed for the string
 }
 
 int string::size() const {
-	return size_;
+	return size_; //size of the string
 }
 
 bool string::empty() const noexcept{
-	if (size_==0){
+	if (size_==0){ //if the size is 0, the string is empty
 		return true;}
 	else { return false;}
 }
 
 void string::clear() {
-	size_ = 0;
+	size_ = 0; // set size to 0
 	capacity_ = 1;
 	data_ = new char [capacity_];
 	memset(data_,0,capacity_);
 }
 
-void string::reserve(int n){ //si parametre n>capacity, on remplace la valeur de capacity par n
+void string::reserve(int n){ //compare capacity whith the string n, if the capacity is smaller we create a new array with the size n
 	if (n<=capacity_){
 		}
 	else {
@@ -58,33 +58,33 @@ void string::reserve(int n){ //si parametre n>capacity, on remplace la valeur de
 		}
 }
 
-void string::resize(int n) {
-	int s = size_;
+void string::resize(int n) { //change the size of the string to n
+	int s = size_; //saves the current size
 	size_ = n;
 		capacity_ = n + 1;
-		data_[capacity_] = '\0'; //ajout du caractere de fin
+		data_[capacity_] = '\0'; //join the null-character
 		if (n > s) {
 			for (int i = s+1; i < n; i++) {
-				data_[i] = '\0'; //remplir avec des '\0' si la nouvelle taille est plus grande
+				data_[i] = '\0'; //complete with null-characters if the new size is bigger
 			}
 		}
 
 }	
 
-void string::resize(int n, char c) {
-	if (n <= max_size_){
+void string::resize(int n, char c) { //change the size of the string to n and complete with character c
+	if (n <= max_size_){//check if n is smaller than max_size
 	int s= size_;
 	size_ = n;
 		capacity_ = n + 1;
-		data_[capacity_] = '\0'; //ajout du caractere de fin
+		data_[capacity_] = '\0'; //join the null-character
 		if (n > s) {
 			for (int i = s+1; i < n; i++) {
-				data_[i] = c; //remplir avec des c si la nouvelle taille est plus grande
+				data_[i] = c; //complete with character c if the new size is bigger
 			}
 		}
 	}
 	else {
-		std::cout << "Dépassement de la taille maximale autorisée" << std::endl;
+		std::cout << "Dépassement de la taille maximale autorisée" << std::endl; //error message if n is bigger than max_size
 	}
 	
 }
@@ -111,7 +111,9 @@ string::string(const string& str) { //str is of class string so we can use the f
 	memcpy(data_,str.data_,capacity_); //using capacity to copy the null-character
 }
 
-string::~string(){  //destructor
+
+string::~string(){
+	delete[] data_;  //destructor
 } 
 
 
@@ -125,19 +127,38 @@ string& string::operator=(char s){ // replace string by char value
 	return *this;
 }
 
-string& string::operator=(const char* s){ // remplace le string existant par un autre element
-	delete[] data_; 
-	int taille=0;
-	while (s[taille]!='\0'){
-		taille = taille+1;}
-	size_ = taille;
-	capacity_ = taille+1; 
-	data_ = new char[capacity_];
-	for (int i=0; i<taille; i++){
-			data_[i] = s[i];}
+string& string::operator=(const char* s){ // replace existing text with another text given in the parameter
+	delete[] data_;  
+	size_ = strlen(s); // size of the new element
+	capacity_ = size_+1;  
+	data_ = new char[capacity_]; // give the new variable the size of the new element's capacity
+	for (int i=0; i<size_; i++){
+			data_[i] = s[i];} //copy each char of the new element in the variable
 	return *this;
 }
 
+string& string::operator=(const string& s){ // replace existing string with another string
+	size_ = s.size();
+	capacity_ = s.capacity(); 
+	data_ = new char[capacity_];
+	for (int i=0; i<size_; i++){
+			data_[i] = s.data_[i];}
+	return *this;
+}
+
+
+string operator+ (const string& A, char c) { //concatenates a string with a character
+	int taille_A = A.size();
+	char* fusion = new char[taille_A+2];
+	string resultat;
+	resultat.data_ = fusion;
+	resultat.size_ = taille_A+1;
+	resultat.capacity_ = taille_A+2; 
+	for (int i=0; i<taille_A; i++){
+		resultat.data_[i] = A.data_[i];}
+	resultat.data_[taille_A] = c;
+	return resultat;
+}	
 
 string operator+ (const string& A, const char* B) { // adds a string to a char
 	int sA = A.size_;
@@ -160,19 +181,17 @@ string operator+ (const string& A, const char* B) { // adds a string to a char
     return AB;
 }	
 
-string operator+ (const string& A, const string& B) { //concatène 2 strings 
-	int taille_A = A.size();
-	int taille_B = B.size();
-	char* fusion = new char[taille_A+taille_B+1];
+string operator+ (const string& A, const string& B) { //concatenate 2 string given in parameter 
+	int taille_A = A.size(); // size of the 1st string
+	int taille_B = B.size(); // size of the 2nd string
+	char* fusion = new char[taille_A+taille_B+1]; //create a pointer to an object with the same size as the sum of the string sizes
 	string resultat;
-	delete[]resultat.data_;
 	resultat.data_ = fusion;
 	resultat.size_ = taille_A+taille_B;
 	resultat.capacity_ = taille_A+taille_B+1; 
 	for (int i=0; i<taille_A; i++){
-		resultat.data_[i] = A.data_[i];}
+		resultat.data_[i] = A.data_[i];} //copy each char of A in result
 	for (int j=0; j<taille_B; j++){
-		resultat.data_[taille_A+j] = B.data_[j];}
+		resultat.data_[taille_A+j] = B.data_[j];} //copy each char of B after the chars of A in result
 	return resultat;
 }	
-	
