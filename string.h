@@ -15,7 +15,10 @@ class string {
 		string& operator= (const char* s);
 		void resize(int n);
 		void resize(int n, char c);
-		
+		string& operator= (const string& s);
+		string& operator+ (const string& s);
+
+
 	protected :
 		char* data_;
 		int size_;

@@ -37,6 +37,7 @@ void string::resize(int n) {
 }	
 
 void string::resize(int n, char c) {
+	if (n <= max_size_){
 	int s= size_;
 	size_ = n;
 		capacity_ = n + 1;
@@ -46,8 +47,16 @@ void string::resize(int n, char c) {
 				data_[i] = c; //remplir avec des c si la nouvelle taille est plus grande
 			}
 		}
-
+	}
+	else {
+		std::cout << "Dépassement de la taille maximale autorisée" << std::endl;
+	}
+	
 }
+
+//string& string::operator=(const string& s){ // remplace le string existant par un autre element
+
+
 
 
 string::~string(){  //destructor
