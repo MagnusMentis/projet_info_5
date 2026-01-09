@@ -115,6 +115,16 @@ string::~string(){  //destructor
 } 
 
 
+string& string::operator=(char s){ // replace string by char value 
+	delete[] data_;
+	size_ = 1;
+	capacity_ = size_ + 1; 
+	data_ = new char[capacity_];
+	data_[0] = s;
+	data_[1] = '\0';
+	return *this;
+}
+
 string& string::operator=(const char* s){ // remplace le string existant par un autre element
 	delete[] data_; 
 	int taille=0;
@@ -128,6 +138,27 @@ string& string::operator=(const char* s){ // remplace le string existant par un 
 	return *this;
 }
 
+
+string operator+ (const string& A, const char* B) { // adds a string to a char
+	int sA = A.size_;
+	int sB = strlen(B);
+	int sAB = sA + sB;
+	
+	string AB;
+	AB.capacity_ = sAB + 1;
+	AB.size_ = sAB;
+	AB.data_ = new char[AB.capacity_];
+
+	for (int i = 0; i < sA; ++i)
+		AB.data_[i] = A.data_[i];
+		
+	for (int j = 0; j < sB; ++j)
+		AB.data_[sA + j] = B[j];
+		
+	AB.data_[sAB] = '\0';
+
+    return AB;
+}	
 
 string operator+ (const string& A, const string& B) { //concatène 2 strings 
 	int taille_A = A.size();

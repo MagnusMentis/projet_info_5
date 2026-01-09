@@ -24,10 +24,12 @@ class string {
 		
 		~string (); //destructeur
 		
+		string& operator= (char s);
 		string& operator= (const char* s);
-		string& operator= (const string& s);
+		//string& operator= (const string& s);
 		
 		friend string operator+ (const string& A, char);
+		friend string operator+ (const string& A, const char* B);
 		friend string operator+ (const string& A, const string& B);
 
 	protected :

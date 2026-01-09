@@ -37,6 +37,23 @@ int main() {
 	C.clear();
 	std::cout << C.data() << std::endl;
 	
+	std::cout << "Test operator = with char" << std::endl;
+	char word1 = 'a';
+	string word2("test");
+	std::cout << "word 1: " << word1 << std::endl;
+	std::cout << "word 2: " << word2.data() << std::endl;
+	word2 = word1;
+	std::cout << "and after equal, word 2: " << word2.data() << std::endl;
+	
+	std::cout << "Test operator + string with char" << std::endl;
+	string word3("zero plus zero");
+	string word4(" equals toto's head");
+	string word5;
+	word5 = word3 + word4;
+	std::cout << word3.data() << std::endl;
+	std::cout << word4.data() << std::endl;
+	std::cout << word5.data() << std::endl;
+	
 //================================================================
 //Student B
 //================================================================
