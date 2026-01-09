@@ -9,7 +9,7 @@ int main() {
 	std::cout << "Test default constructor" << std::endl;
 	string A;
 	std::cout << A.data() << std::endl;
-	std::cout << "La taille est de: " << A.size() << std::endl;
+	std::cout << "La taille est de: " << A.size() << std::endl; //we use .size() a lot for testing but we test this function in student A test to respect the order
 
 	std::cout << "Test constructor from char" << std::endl;
 	string B("Hello world!");
@@ -26,7 +26,17 @@ int main() {
 	string C(B);
 	std::cout << C.data() << std::endl;
 	std::cout << "La taille est de: " << C.size() << std::endl;
-
+	
+	std::cout << "Test c_str" << std::endl;
+	std::cout << C.c_str() << std::endl;
+	
+	std::cout << "Test size" << std::endl;
+	std::cout << "La taille est de: " << C.size() << std::endl;
+	
+	std::cout << "Test clear" << std::endl;
+	C.clear();
+	std::cout << C.data() << std::endl;
+	
 //================================================================
 //Student B
 //================================================================
@@ -67,6 +77,11 @@ int main() {
   	str1 = "Test égal: ";  
   	str2 = "Test réussi ;)";   
   	std::cout << str1  << str2<< std::endl;
+  	std::string str4, str5;
+  	str3 = "Test +: ";  
+  	str4 = "Mais où trouve t'il ";
+  	str5 = "toute cette énergie";
+  	std::cout << str3  << str4+str5<< std::endl;
 
 
 	return EXIT_SUCCESS;
