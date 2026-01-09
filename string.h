@@ -8,12 +8,16 @@ class string {
 		int length() const;
 		bool empty() const noexcept;
 		void reserve (int n);
+		char* c_str() const ;
 		string();
 		string(const char* text);
 		string(const string& str);
 		~string (); //destructeur
 		string& operator= (const char* s);
 		friend string operator+ (const string& A, const string& B);
+		void resize(int n);
+		void resize(int n, char c);
+
 		
 	protected :
 		char* data_;
