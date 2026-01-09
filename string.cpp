@@ -116,30 +116,29 @@ string::~string(){
 } 
 
 
-string& string::operator=(const char* s){ // remplace le string existant par un autre element
-	delete[] data_; 
-	size_ = strlen(s);
-	capacity_ = size_+1; 
-	data_ = new char[capacity_];
+string& string::operator=(const char* s){ // replace existing text with another text given in the parameter
+	delete[] data_;  
+	size_ = strlen(s); // size of the new element
+	capacity_ = size_+1;  
+	data_ = new char[capacity_]; // give the new variable the size of the new element's capacity
 	for (int i=0; i<size_; i++){
-			data_[i] = s[i];}
+			data_[i] = s[i];} //copy each char of the new element in the variable
 	return *this;
 }
 
 
-string operator+ (const string& A, const string& B) { //concatène 2 strings 
-	int taille_A = A.size();
-	int taille_B = B.size();
-	char* fusion = new char[taille_A+taille_B+1];
+string operator+ (const string& A, const string& B) { //concatenate 2 string given in parameter 
+	int taille_A = A.size(); // size of the 1st string
+	int taille_B = B.size(); // size of the 2nd string
+	char* fusion = new char[taille_A+taille_B+1]; //create a pointer to an object with the same size as the sum of the string sizes
 	string resultat;
-	delete[]resultat.data_;
 	resultat.data_ = fusion;
 	resultat.size_ = taille_A+taille_B;
 	resultat.capacity_ = taille_A+taille_B+1; 
 	for (int i=0; i<taille_A; i++){
-		resultat.data_[i] = A.data_[i];}
+		resultat.data_[i] = A.data_[i];} //copy each char of A in result
 	for (int j=0; j<taille_B; j++){
-		resultat.data_[taille_A+j] = B.data_[j];}
+		resultat.data_[taille_A+j] = B.data_[j];} //copy each char of B after the chars of A in result
 	return resultat;
 }	
 	
