@@ -126,6 +126,15 @@ string& string::operator=(const char* s){ // remplace le string existant par un 
 	return *this;
 }
 
+string& string::operator=(const string& s){ // replace existing string with another string
+	size_ = s.size();
+	capacity_ = s.capacity(); 
+	data_ = new char[capacity_];
+	for (int i=0; i<size_; i++){
+			data_[i] = s.data_[i];}
+	return *this;
+}
+
 
 string operator+ (const string& A, const string& B) { //concatène 2 strings 
 	int taille_A = A.size();
@@ -142,4 +151,16 @@ string operator+ (const string& A, const string& B) { //concatène 2 strings
 		resultat.data_[taille_A+j] = B.data_[j];}
 	return resultat;
 }	
-	
+
+string operator+ (const string& A, char c) { //concatenates a string with a character
+	int taille_A = A.size();
+	char* fusion = new char[taille_A+2];
+	string resultat;
+	resultat.data_ = fusion;
+	resultat.size_ = taille_A+1;
+	resultat.capacity_ = taille_A+2; 
+	for (int i=0; i<taille_A; i++){
+		resultat.data_[i] = A.data_[i];}
+	resultat.data_[taille_A] = c;
+	return resultat;
+}	

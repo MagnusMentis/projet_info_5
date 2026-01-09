@@ -64,6 +64,18 @@ int main() {
 	std::cout << D.data() << std::endl;
 	std::cout << "La taille est de: " << D.size() << std::endl;
 
+	string string1("Salut a tous");
+	char string2 = '!';
+	string string3;
+
+	std::cout << "Test operator + and = " << std::endl;
+	std::cout << string1.data() << std::endl;
+	std::cout << string2 << std::endl;
+
+	string3 = string1 + string2;
+
+	std::cout << string3.data() << std::endl;
+
 //================================================================
 //Student C
 //================================================================
