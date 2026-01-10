@@ -2,9 +2,12 @@
 EXECUTE CODE :
 ================================================================
 
-g++ -Wall -o program main.cpp string.cpp
+go into build/
+execute : make
+execute : ./program
 
-make
+
+(or use : g++ -Wall -o program main.cpp string.cpp )
 
 ================================================================
 USING GIT :
